@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+
+<project name="raymap" default="build" basedir=".">
+
+  <!-- Build everything -->
+  <target name="build" depends="build-java,build-jar"/>
+
+  <!-- Clean everything -->
+  <target name="clean" depends="clean-java"/>
+
+  <target name="clean-lcmtypes">
+    <exec executable="make" dir="${basedir}">
+      <arg line="-f Makefile.lcmgen clean" />
+    </exec>
+  </target>
+
+  <target name="generate-lcmtypes">
+    <exec executable="make" dir="${basedir}">
+      <arg line="-f Makefile.lcmgen" />
+    </exec>
+  </target>
+
+  <target name="build-java">
+    <mkdir dir="build"/>
+    <javac
+       srcdir="src"
+       includes="**/*.java"
+       debug="on"
+       optimize="off"
+       destdir="build"
+       compiler="extJavac"
+       deprecation="yes"
+       source="1.5"
+       target="1.5"
+       >
+    </javac>
+  </target>
+
+  <!-- Build Jar -->
+  <target name="build-jar" depends="build-java">
+    <jar destfile="raymap.jar" compress="true">
+
+      <fileset dir="build">
+	<include name="**/*.class" />
+	<include name="*.class" />
+      </fileset>
+
+      <fileset dir="src">
+	<include name="**/*.png" />
+      </fileset>
+
+      <manifest>
+	<attribute name="Main-Class" value="raymap.Main" />
+      </manifest>
+    </jar>
+    <copy file="raymap.jar" todir="." />
+  </target>
+
+  <target name="clean-java" >
+    <delete>
+      <fileset dir="build" includes="**/*.class"/>
+      <fileset dir="." includes="**/*~" defaultexcludes="no"/>
+    </delete>
+  </target>
+
+</project>
