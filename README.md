@@ -1,11 +1,14 @@
 local-homography
 ================
 
-Follow this link for a research paper describing this code:
-http://april.eecs.umich.edu/papers/details.php?name=ranganathan2014iros
+Paper
+----
+The paper decsribing this method is available at http://april.eecs.umich.edu/papers/details.php?name=ranganathan2014iros
 
-Locally weighted homography estimation and non-parameteric lens distortion
-correction
+Code organization
+----
+This code is for locally weighted homography estimation and non-parameteric lens
+distortion correction.
 
 The code is organized as a bunch of python/jython scripts invoking java code to
 perform distortion correction on a tag-mosaic image. The evaluation scripts
@@ -19,6 +22,10 @@ Most of the useful code lives in jython/estim with adhoc evaluation scripts in
 jython/eval. Each script performs some calculation and spills its guts into a
 JSON output file. Subsequent scripts read from these JSON files and do further
 processing.
+
+
+Script Pipeline
+----
 
 This is the rough sequence for the pipeline of estimation scripts:
 
