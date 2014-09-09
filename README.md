@@ -5,6 +5,9 @@ Paper
 ----
 The paper decsribing this method is available at http://april.eecs.umich.edu/papers/details.php?name=ranganathan2014iros
 
+Datasets used in the research publication are checked into the repository as `datasets.tar.gz`
+
+
 Code organization
 ----
 This code is for locally weighted homography estimation and non-parameteric lens
@@ -18,8 +21,8 @@ method with the augmented-method using the non-parametric lens distortion.
 This set of scripts has a dependency on the april robotics toolkit java library:
 http://april.eecs.umich.edu/wiki/.
 
-Most of the useful code lives in jython/estim with adhoc evaluation scripts in
-jython/eval. Each script performs some calculation and spills its guts into a
+Most of the useful code lives in `jython/estim` with adhoc evaluation scripts in
+`jython/eval`. Each script performs some calculation and spills its guts into a
 JSON output file. Subsequent scripts read from these JSON files and do further
 processing.
 
@@ -50,5 +53,3 @@ This is the rough sequence for the pipeline of estimation scripts:
 8. Monte-carlo sample from undistortion model       > (mc_urcorrs1.json)
 9. Augmented camera calibration                     > (calib_augmented.json)
 10. Calibration convergence comparison              > (calib_convergence.json)
-
-Datasets used in the research publication are checked into the repository as datasets.tar.gz
