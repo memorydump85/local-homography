@@ -3,7 +3,8 @@ local-homography
 
 Paper
 ----
-The paper decsribing this method is available at http://april.eecs.umich.edu/papers/details.php?name=ranganathan2014iros
+The paper decsribing this method is available at  
+http://april.eecs.umich.edu/papers/details.php?name=ranganathan2014iros
 
 Datasets used in the research publication are checked into the repository as `datasets.tar.gz`
 
@@ -18,7 +19,7 @@ perform distortion correction on a tag-mosaic image. The evaluation scripts
 operate on a tag-mosaic image directory to compare the classic camera calibration
 method with the augmented-method using the non-parametric lens distortion.
 
-This set of scripts has a dependency on the april robotics toolkit java library:
+This set of scripts has a dependency on the april robotics toolkit java library:  
 http://april.eecs.umich.edu/wiki/.
 
 Most of the useful code lives in `jython/estim` with adhoc evaluation scripts in
