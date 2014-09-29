@@ -8,6 +8,9 @@ http://april.eecs.umich.edu/papers/details.php?name=ranganathan2014iros
 
 Datasets used in the research publication are checked into the repository as `datasets.tar.gz`
 
+An online demo of this software is available at  
+http://rpradeep.webhop.net/local-homography/
+
 
 Code organization
 ----
