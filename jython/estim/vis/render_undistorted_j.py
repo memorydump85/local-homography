@@ -4,7 +4,6 @@ from javax.imageio import *
 from java.io import File
 from java.lang import Math
 from april.jmat import LinAlg
-from april.vis import *
 import sys
 import util.jsonx as jsonx
 
