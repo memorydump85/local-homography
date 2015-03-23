@@ -18,7 +18,7 @@ poly_terms_c = compile(poly_terms, '', 'eval')
 phi = lambda i, j: eval(poly_terms_c) 
 
 
-def quadratic_regress2D(data, obs):
+def poly_regress2D(data, obs):
 #--------------------------------------
     Phi = np.array([phi(i, j)  for (i, j) in data])
     return np.linalg.lstsq(Phi, obs)[0]
@@ -75,11 +75,11 @@ if __name__ == "__main__":
     undistortion_model['poly_terms'] = poly_terms
     
     x, t = np.array(data[:,0:2]), np.array(data[:,2])
-    polymodel_x = quadratic_regress2D(x, t).tolist()
+    polymodel_x = poly_regress2D(x, t).tolist()
     undistortion_model['poly_x'] = polymodel_x
         
     x, t = np.array(data[:,0:2]), np.array(data[:,3])
-    polymodel_y = quadratic_regress2D(x, t).tolist()
+    polymodel_y = poly_regress2D(x, t).tolist()
     undistortion_model['poly_y'] = polymodel_y   
     
     # GP models
