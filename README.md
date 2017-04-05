@@ -1,3 +1,12 @@
+<hr/>
+
+-- Note --
+==========
+
+A newer, better tested, python only implementation of this code, with better documentation, is available at
+https://github.com/memorydump85/undistort.
+<hr/>
+
 local-homography
 ================
 
